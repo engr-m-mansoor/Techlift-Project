@@ -6,14 +6,36 @@ import javax.persistence.*;
 public class BalanceInquiries {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "pk_id", nullable = false)
-    private Long pk_id;
+    @Column(name = "Balance ID", nullable = false)
+    private Long balanceId;
+    private Long cardId;
+    private Long clientId;
 
-    public Long getPk_id() {
-        return pk_id;
+    public Long getBalanceId() {
+        return balanceId;
     }
 
-    public void setPk_id(Long pk_id) {
-        this.pk_id = pk_id;
+    public void setBalanceId(Long balanceId) {
+        this.balanceId = balanceId;
     }
+
+    public Long getCardId() {
+        return cardId;
+    }
+
+    public void setCardId(Long cardId) {
+        this.cardId = cardId;
+    }
+
+    public Long getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
+    }
+
 }
+
+
+

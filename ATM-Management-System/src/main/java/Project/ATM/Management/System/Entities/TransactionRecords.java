@@ -6,14 +6,43 @@ import javax.persistence.*;
 public class TransactionRecords {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "pk_id", nullable = false)
-    private Long pk_id;
+    @Column(name = "Transaction ID", nullable = false)
+    private Long transactionId;
+    private Long clientId;
+    private Long transactionTypeId;
 
-    public Long getPk_id() {
-        return pk_id;
+
+    private String date;
+
+    public Long getTransactionId() {
+        return transactionId;
     }
 
-    public void setPk_id(Long pk_id) {
-        this.pk_id = pk_id;
+    public void setTransactionId(Long transactionId) {
+        this.transactionId = transactionId;
+    }
+
+    public Long getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
+    }
+
+    public Long getTransactionTypeId() {
+        return transactionTypeId;
+    }
+
+    public void setTransactionTypeId(Long transactionTypeId) {
+        this.transactionTypeId = transactionTypeId;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
