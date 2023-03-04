@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class BalanceInquiries {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Balance ID", nullable = false)
+    @Column(name = "balance_id", nullable = false)
     private Long balanceId;
     private Long cardId;
     private Long clientId;
