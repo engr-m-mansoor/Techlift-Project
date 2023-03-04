@@ -3,6 +3,7 @@ package Project.ATM.Management.System.Entities;
 import javax.persistence.*;
 
 @Entity
+
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
