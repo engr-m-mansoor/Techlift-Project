@@ -7,10 +7,14 @@ public class Savings {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Withdraw (Saving) ID", nullable = false)
+
+    @Column(name = "save_id", nullable = false)
     private Long saveId;
+    @Column(name = "client_id", nullable = false)
     private Long clientId;
+    @Column(name = "card_id", nullable = false)
     private Long cardId;
+    @Column(name = "amount", nullable = false)
     private Long amount;
 
     public Long getSaveId() {

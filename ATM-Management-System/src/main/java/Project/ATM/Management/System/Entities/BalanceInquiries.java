@@ -8,7 +8,9 @@ public class BalanceInquiries {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "balance_id", nullable = false)
     private Long balanceId;
+    @Column(name = "card_id", nullable = false)
     private Long cardId;
+    @Column(name = "client_id", nullable = false)
     private Long clientId;
 
     public Long getBalanceId() {

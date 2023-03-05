@@ -6,12 +6,14 @@ import javax.persistence.*;
 public class TransactionRecords {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Transaction ID", nullable = false)
+    @Column(name = "transaction_id", nullable = false)
     private Long transactionId;
+    @Column(name = "client_id", nullable = false)
     private Long clientId;
+    @Column(name = "transaction_type_id", nullable = false)
     private Long transactionTypeId;
 
-
+    @Column(name = "date", nullable = false)
     private String date;
 
     public Long getTransactionId() {
