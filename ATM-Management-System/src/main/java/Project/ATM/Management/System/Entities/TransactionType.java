@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 public class TransactionType {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Transaction Type ID", nullable = false)
     private Long transactionTypeId;
     private String transactionTypeName;

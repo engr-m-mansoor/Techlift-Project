@@ -4,30 +4,31 @@ import javax.persistence.*;
 
 @Entity
 
-public class Client {
+public class CustomerDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "client_id", nullable = false)
-    private Long clientId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "cnic", nullable = false)
+    private Long clientCnic;
     @Column(name = "first_name", nullable = false)
     private String firstName;
     @Column(name = "last_name", nullable = false)
     private String lastName;
     @Column(name = "gender", nullable = false)
     private char gender;
-    @Column(name = "age", nullable = false)
-    private int age;
-
-    @Column(name = "contact", nullable = false)
-    private Long contact;
+    @Column(name = "contact_details", nullable = false)
+    private Long contactDetails;
     @Column(name = "address", nullable = false)
     private String address;
-    public Long getClientId() {
-        return clientId;
+
+    @Column(name = "account_number", nullable = false)
+    private Long accountNumber;
+
+    public Long getClientCnic() {
+        return clientCnic;
     }
 
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
+    public void setClientCnic(Long clientCnic) {
+        this.clientCnic = clientCnic;
     }
 
     public String getFirstName() {
@@ -54,20 +55,12 @@ public class Client {
         this.gender = gender;
     }
 
-    public int getAge() {
-        return age;
+    public Long getContactDetails() {
+        return contactDetails;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public Long getContact() {
-        return contact;
-    }
-
-    public void setContact(Long contact) {
-        this.contact = contact;
+    public void setContactDetails(Long contactDetails) {
+        this.contactDetails = contactDetails;
     }
 
     public String getAddress() {
@@ -78,6 +71,11 @@ public class Client {
         this.address = address;
     }
 
+    public Long getAccountNumber() {
+        return accountNumber;
+    }
 
-
+    public void setAccountNumber(Long accountNumber) {
+        this.accountNumber = accountNumber;
+    }
 }
