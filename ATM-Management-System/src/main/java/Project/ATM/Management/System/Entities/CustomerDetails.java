@@ -3,81 +3,29 @@ package Project.ATM.Management.System.Entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
+
 @Data
 @Entity
 
 public class CustomerDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "cnic", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cnic")
     private Long clientCnic;
-    @Column(name = "first_name", nullable = false)
+    @Column(name = "first_name")
     private String firstName;
-    @Column(name = "last_name", nullable = false)
+    @Column(name = "last_name")
     private String lastName;
-    @Column(name = "gender", nullable = false)
+    @Column(name = "gender")
     private char gender;
-    @Column(name = "contact_details", nullable = false)
+    @Column(name = "contact_details")
     private Long contactDetails;
-    @Column(name = "address", nullable = false)
+    @Column(name = "address")
     private String address;
 
-    @Column(name = "account_number", nullable = false)
-    private Long accountNumber;
+    @OneToOne(mappedBy = "customerDetails")
+    @JoinColumn(name = "account_number")
+    private List<AccountDetails> accountDetailslist;
 
-    public Long getClientCnic() {
-        return clientCnic;
-    }
-
-    public void setClientCnic(Long clientCnic) {
-        this.clientCnic = clientCnic;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public char getGender() {
-        return gender;
-    }
-
-    public void setGender(char gender) {
-        this.gender = gender;
-    }
-
-    public Long getContactDetails() {
-        return contactDetails;
-    }
-
-    public void setContactDetails(Long contactDetails) {
-        this.contactDetails = contactDetails;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public Long getAccountNumber() {
-        return accountNumber;
-    }
-
-    public void setAccountNumber(Long accountNumber) {
-        this.accountNumber = accountNumber;
-    }
 }

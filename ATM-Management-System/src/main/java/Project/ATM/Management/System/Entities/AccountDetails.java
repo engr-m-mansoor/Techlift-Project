@@ -3,64 +3,33 @@ package Project.ATM.Management.System.Entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
+
 @Data
 @Entity
 public class AccountDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "account_number", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "account_number")
     private Long accountNumber;
-
-    @Column(name = "card_number", nullable = false)
+    @Column(name = "card_number")
     private Long cardNumber;
-
-    @Column(name = "card_pin", nullable = false)
+    @Column(name = "card_pin")
     private Long cardPin;
 
+    @OneToOne
+    private CustomerDetails customerDetails;
 
-    @Column(name = "card_type_id", nullable = false)
-    private Long cardTypeId;
+    @OneToOne(mappedBy = "accountDetailsType")
+    @JoinColumn(name = "account_type_id")
+    private List<AccountTypes> accountTypesList;
 
-    public Long getAccountTypeId() {
-        return accountTypeId;
-    }
+    @OneToOne(mappedBy = "accountDetailsCard")
+    @JoinColumn(name = "card_type_id")
+    private List<CardTypes> cardTypesList;
 
-    public void setAccountTypeId(Long accountTypeId) {
-        this.accountTypeId = accountTypeId;
-    }
+    @OneToMany (mappedBy = "transactionDetails")
 
-    @Column(name = "account_type_id", nullable = false)
-    private Long accountTypeId;
+    private List<TransactionDetails> transactionDetailsList;
 
-    public Long getAccountNumber() {
-        return accountNumber;
-    }
-
-    public void setAccountNumber(Long accountNumber) {
-        this.accountNumber = accountNumber;
-    }
-
-    public Long getCardNumber() {
-        return cardNumber;
-    }
-
-    public void setCardNumber(Long cardNumber) {
-        this.cardNumber = cardNumber;
-    }
-
-    public Long getCardPin() {
-        return cardPin;
-    }
-
-    public void setCardPin(Long cardPin) {
-        this.cardPin = cardPin;
-    }
-
-    public Long getCardTypeId() {
-        return cardTypeId;
-    }
-
-    public void setCardTypeId(Long cardTypeId) {
-        this.cardTypeId = cardTypeId;
-    }
 }

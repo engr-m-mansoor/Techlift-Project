@@ -5,24 +5,13 @@ import javax.persistence.*;
 @Entity
 public class TransactionTypes {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "Transaction Type ID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "transaction_type_id")
     private Long transactionTypeId;
+    @Column(name = "transaction_type_name")
     private String transactionTypeName;
 
-    public Long getTransactionTypeId() {
-        return transactionTypeId;
-    }
+    @OneToOne
+    private TransactionDetails transactionDetails;
 
-    public void setTransactionTypeId(Long transactionTypeId) {
-        this.transactionTypeId = transactionTypeId;
-    }
-
-    public String getTransactionTypeName() {
-        return transactionTypeName;
-    }
-
-    public void setTransactionTypeName(String transactionTypeName) {
-        this.transactionTypeName = transactionTypeName;
-    }
 }

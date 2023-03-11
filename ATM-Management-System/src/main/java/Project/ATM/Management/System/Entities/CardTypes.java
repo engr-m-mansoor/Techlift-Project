@@ -7,26 +7,12 @@ import javax.persistence.*;
 @Entity
 public class CardTypes {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "card_type-id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "card_type_id")
     private Long cardTypeId;
-    @Column(name = "card_type-description", nullable = false)
+    @Column(name = "card_type_description")
     private String cardTypeDescription;
 
-    public Long getCardTypeId() {
-        return cardTypeId;
-    }
-
-    public void setCardTypeId(Long cardTypeId) {
-        this.cardTypeId = cardTypeId;
-    }
-
-    public String getCardTypeDescription() {
-        return cardTypeDescription;
-    }
-
-    public void setCardTypeDescription(String cardTypeDescription) {
-        this.cardTypeDescription = cardTypeDescription;
-    }
-
+    @OneToOne
+    private AccountDetails accountDetailsCard;
 }
