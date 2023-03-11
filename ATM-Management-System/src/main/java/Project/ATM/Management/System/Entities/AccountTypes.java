@@ -1,6 +1,10 @@
 package Project.ATM.Management.System.Entities;
+import javax.persistence.*;
 
+@Entity
 public class AccountTypes {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long accountTypeId;
 
     private String accountTypeDescription;

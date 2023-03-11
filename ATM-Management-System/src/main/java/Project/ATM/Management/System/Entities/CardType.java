@@ -1,9 +1,11 @@
 package Project.ATM.Management.System.Entities;
 
-import javax.persistence.Column;
+import javax.persistence.*;
 
+@Entity
 public class CardType {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "card_type-id", nullable = false)
     private Long cardTypeId;
     @Column(name = "card_type-description", nullable = false)
