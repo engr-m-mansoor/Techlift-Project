@@ -15,8 +15,6 @@ public class Transaction {
     private Long transactionId;
     @Column(name = "amount_processed")
     private Long AmountProcessed;
-    @Column(name = "available_balance")
-    private Long availableBalance;
     @Column(name = "date")
     private String date;
 
@@ -27,7 +25,7 @@ public class Transaction {
 
     @ManyToOne
     @JoinColumn(name = "account_number")
-    private  Transaction transactionAccountInformation;
+    private  Account account_transaction;
 
 
 }

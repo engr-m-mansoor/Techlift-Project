@@ -32,7 +32,7 @@ public class Account {
     @JoinColumn(name = "card_type_id")
     private CardType cardTypeInformation;
 
-    @OneToMany
-    private Transaction transaction;
+    @OneToMany(mappedBy = "account_transaction")
+    private List <Transaction> transaction;
 
 }
