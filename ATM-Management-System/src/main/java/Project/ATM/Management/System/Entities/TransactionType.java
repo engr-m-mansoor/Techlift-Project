@@ -1,9 +1,10 @@
 package Project.ATM.Management.System.Entities;
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
 
 @Entity
-public class TransactionTypes {
+public class TransactionType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "transaction_type_id")
@@ -12,6 +13,6 @@ public class TransactionTypes {
     private String transactionTypeName;
 
     @OneToOne
-    private TransactionDetails transactionDetails;
+    private Transaction transactionType;
 
 }

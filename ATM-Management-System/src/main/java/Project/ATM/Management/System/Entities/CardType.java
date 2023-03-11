@@ -1,11 +1,12 @@
 package Project.ATM.Management.System.Entities;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
+
 @Data
 @Entity
-public class CardTypes {
+public class CardType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "card_type_id")
@@ -14,5 +15,5 @@ public class CardTypes {
     private String cardTypeDescription;
 
     @OneToOne
-    private AccountDetails accountDetailsCard;
+    private Account account;
 }

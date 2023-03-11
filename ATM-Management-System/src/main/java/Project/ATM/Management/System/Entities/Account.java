@@ -1,15 +1,19 @@
 package Project.ATM.Management.System.Entities;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
 import java.util.List;
 
 @Data
 @Entity
-public class AccountDetails {
-    @Id
+@Table(name="Account")
+public class Account {
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="serial_no")
+    private Long Serial_No;
+    @Id
     @Column(name = "account_number")
     private Long accountNumber;
     @Column(name = "card_number")
@@ -18,18 +22,17 @@ public class AccountDetails {
     private Long cardPin;
 
     @OneToOne
-    private CustomerDetails customerDetails;
+    private Customer customerDetails;
 
-    @OneToOne(mappedBy = "accountDetailsType")
+    @OneToOne
     @JoinColumn(name = "account_type_id")
-    private List<AccountTypes> accountTypesList;
+    private AccountType accountTypeInformation;
 
-    @OneToOne(mappedBy = "accountDetailsCard")
+    @OneToOne
     @JoinColumn(name = "card_type_id")
-    private List<CardTypes> cardTypesList;
+    private CardType cardTypeInformation;
 
-    @OneToMany (mappedBy = "transactionDetails")
-
-    private List<TransactionDetails> transactionDetailsList;
+    @OneToMany
+    private Transaction transaction;
 
 }

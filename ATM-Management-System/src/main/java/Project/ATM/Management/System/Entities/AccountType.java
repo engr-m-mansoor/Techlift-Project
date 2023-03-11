@@ -1,10 +1,11 @@
 package Project.ATM.Management.System.Entities;
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
+
 @Data
 @Entity
-public class AccountTypes {
+public class AccountType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "account_type_id")
@@ -14,5 +15,5 @@ public class AccountTypes {
     @Column(name = "max_allowed_withdrawal")
     private Long maxAllowedWithdrawal;
     @OneToOne
-    private AccountDetails accountDetailsType;
+    private Account account;
 }

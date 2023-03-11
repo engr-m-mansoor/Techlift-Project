@@ -1,31 +1,35 @@
 package Project.ATM.Management.System.Entities;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
+
 import java.util.List;
 
 @Data
 @Entity
 
-public class CustomerDetails {
+public class Customer {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="serial_no")
+    private Long Serial_No;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cnic")
-    private Long clientCnic;
+    private Long Cnic;
     @Column(name = "first_name")
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
     @Column(name = "gender")
     private char gender;
-    @Column(name = "contact_details")
-    private Long contactDetails;
+    @Column(name = "contact_number")
+    private Long contactNumber;
     @Column(name = "address")
     private String address;
 
-    @OneToOne(mappedBy = "customerDetails")
+    @OneToOne
     @JoinColumn(name = "account_number")
-    private List<AccountDetails> accountDetailslist;
+    private Account accountData;
 
 }

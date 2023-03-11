@@ -1,13 +1,14 @@
 package Project.ATM.Management.System.Entities;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
+
 import java.util.List;
 
 @Data
 @Entity
-public class TransactionDetails {
+public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "transaction_id")
@@ -19,14 +20,14 @@ public class TransactionDetails {
     @Column(name = "date")
     private String date;
 
-    @OneToOne(mappedBy = "transactionDetails")
+    @OneToOne
     @JoinColumn(name = "transaction_type_id")
-    private List<TransactionTypes> transactionTypesList;
+    private TransactionType transactionTypeInformation;
 
 
     @ManyToOne
     @JoinColumn(name = "account_number")
-    private  TransactionDetails transactionDetails;
+    private  Transaction transactionAccountInformation;
 
 
 }
