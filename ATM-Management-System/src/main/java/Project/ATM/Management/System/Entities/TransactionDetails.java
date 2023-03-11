@@ -16,9 +16,17 @@ public class TransactionDetails {
 
     @Column(name = "amount_processed", nullable = false)
     private Long AmountProcessed;
+    @Column(name = "available_balance", nullable = false)
+    private Long availableBalance;
+    public Long getAvailableBalance() {
+        return availableBalance;
+    }
 
-    @Column(name = "remaining balance", nullable = false)
-    private Long remainingBalance;
+    public void setAvailableBalance(Long availableBalance) {
+        this.availableBalance = availableBalance;
+    }
+
+
 
     public Long getTransactionId() {
         return transactionId;
@@ -52,13 +60,7 @@ public class TransactionDetails {
         AmountProcessed = amountProcessed;
     }
 
-    public Long getRemainingBalance() {
-        return remainingBalance;
-    }
 
-    public void setRemainingBalance(Long remainingBalance) {
-        this.remainingBalance = remainingBalance;
-    }
 
     public String getDate() {
         return date;
