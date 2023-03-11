@@ -3,7 +3,7 @@ package Project.ATM.Management.System.Entities;
 import lombok.Data;
 
 import javax.persistence.*;
-
+@Data
 @Entity
 public class AccountDetails {
     @Id

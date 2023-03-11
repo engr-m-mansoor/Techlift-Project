@@ -3,7 +3,7 @@ package Project.ATM.Management.System.Entities;
 import javax.persistence.*;
 
 @Entity
-public class TransactionType {
+public class TransactionTypes {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "Transaction Type ID", nullable = false)

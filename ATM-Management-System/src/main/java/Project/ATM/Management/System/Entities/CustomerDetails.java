@@ -1,7 +1,9 @@
 package Project.ATM.Management.System.Entities;
 
-import javax.persistence.*;
+import lombok.Data;
 
+import javax.persistence.*;
+@Data
 @Entity
 
 public class CustomerDetails {

@@ -1,9 +1,11 @@
 package Project.ATM.Management.System.Entities;
 
-import javax.persistence.*;
+import lombok.Data;
 
+import javax.persistence.*;
+@Data
 @Entity
-public class CardType {
+public class CardTypes {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "card_type-id", nullable = false)
